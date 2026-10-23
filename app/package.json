@@ -1,0 +1,48 @@
+{
+  "name": "palad1n",
+  "version": "2.0.1",
+  "private": true,
+  "description": "Palad1n: поиск малого бизнеса без сайта, база лидов, очередь сообщений",
+  "main": "main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test --no-warnings test/*.test.js core/test/*.test.js",
+    "shots": "node tools/shots.js",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "devDependencies": {
+    "electron": "^40.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "local.palad1n.app",
+    "productName": "Palad1n",
+    "files": [
+      "main/**",
+      "renderer/**",
+      "core/src/**",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Palad1n"
+    },
+    "directories": {
+      "buildResources": "build"
+    },
+    "artifactName": "Palad1n-${version}-${target}.${ext}"
+  },
+  "productName": "Palad1n"
+}
