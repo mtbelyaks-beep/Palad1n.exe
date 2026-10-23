@@ -8,7 +8,7 @@
     "start": "electron .",
     "test": "node --test --no-warnings test/*.test.js core/test/*.test.js",
     "shots": "node tools/shots.js",
-    "dist": "electron-builder --win nsis portable"
+    "dist": "electron-builder --win nsis portable --publish never"
   },
   "engines": {
     "node": ">=22.5"
@@ -37,12 +37,15 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
-      "shortcutName": "Palad1n"
+      "shortcutName": "Palad1n",
+      "artifactName": "Palad1n-Setup-${version}.${ext}"
     },
     "directories": {
       "buildResources": "build"
     },
-    "artifactName": "Palad1n-${version}-${target}.${ext}"
+    "portable": {
+      "artifactName": "Palad1n-Portable-${version}.${ext}"
+    }
   },
   "productName": "Palad1n"
 }
