@@ -1,9 +1,0 @@
-{
-  "name": "lead-core",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Ядро данных парсера: сбор карточек 2ГИС, классификация сайта и контактов, локальная база",
-  "main": "src/engine.js",
-  "scripts": { "test": "node --test --no-warnings test/*.test.js" },
-  "engines": { "node": ">=22.5" }
-}
